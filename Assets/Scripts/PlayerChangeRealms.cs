@@ -4,140 +4,108 @@ using UnityEngine;
 
 public class PlayerChangeRealms : MonoBehaviour {
 
-	public float realm = 1;
-	public GameObject[] objects;
-	public int size = 100;
+	public int startRealm = 1;
+	public GameObject[] realm1Objects;
+	public GameObject[] realm2Objects;
+	public GameObject[] realm3Objects;
 
-	void Start () {
+	void Awake () 
+	{
 
-		objects = new GameObject[size];
+		realm1Objects = new GameObject[GameObject.FindGameObjectsWithTag("Realm1").Length];
+		realm2Objects = new GameObject[GameObject.FindGameObjectsWithTag("Realm2").Length];
+		realm3Objects = new GameObject[GameObject.FindGameObjectsWithTag("Realm3").Length];
 
-		//realm the player starts in
-		objects = GameObject.FindGameObjectsWithTag("Realm2");
-		foreach (GameObject x in objects) {
-			x.SetActive(true);
+		realm1Objects = GameObject.FindGameObjectsWithTag ("Realm1");
+		realm2Objects = GameObject.FindGameObjectsWithTag ("Realm2");
+		realm3Objects = GameObject.FindGameObjectsWithTag ("Realm3");
+
+		ChangeRealms (startRealm);
+	}
+
+	void Update () 
+	{
+		//button pressed to change realm
+		if (Input.GetButtonDown ("ChangeRealmLeft")) {
+			if (startRealm == 0)
+				startRealm = 2;
+			else
+				startRealm--;
+
+			ChangeRealms (startRealm);
 		}
 
-		//other realms
-		objects = GameObject.FindGameObjectsWithTag("Realm1");
-		foreach (GameObject x in objects) {
-			x.SetActive(false);
-		}
+		if (Input.GetButtonDown ("ChangeRealmRight")) {
+			if (startRealm == 2)
+				startRealm = 0;
+			else
+				startRealm++;
 
-		objects = GameObject.FindGameObjectsWithTag("Realm3");
-		foreach (GameObject x in objects) {
-			x.SetActive(false);
+			ChangeRealms (startRealm);
 		}
 	}
 
-	void Update () {
-		if (Input.GetKeyUp(KeyCode.Alpha2)) {
-			realm = realm + 1;
-			//realm = realm % 3;
+	void ChangeRealms(int realm)
+	{
 
-			if (realm == 0) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
+		if (startRealm == 0) {
+			for (int i = 0; i < realm1Objects.Length; i++) {
+				GameObject curObject = realm1Objects [i];
 
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				curObject.GetComponent<SpriteRenderer> ().enabled = true;
+				curObject.GetComponent<BoxCollider2D> ().enabled = true;
+				curObject.GetComponent<AudioSource> ().enabled = true;
 			}
-			if (realm == 1) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
+		} else {
+			for (int i = 0; i < realm1Objects.Length; i++) {
+				GameObject curObject = realm1Objects [i];
 
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-			}
-			if (realm == 2) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-			}
-		} 
-		else if (Input.GetKeyUp(KeyCode.Alpha1)) {
-			realm = realm - 1;
-			//realm = realm % 3;
-
-			if (realm == 0) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-			}
-			if (realm == 1) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-			}
-			if (realm == 2) {
-				objects = GameObject.FindGameObjectsWithTag ("Realm3");
-				foreach (GameObject x in objects) {
-					x.SetActive (true);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm2");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
-
-				objects = GameObject.FindGameObjectsWithTag ("Realm1");
-				foreach (GameObject x in objects) {
-					x.SetActive (false);
-				}
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				curObject.GetComponent<AudioSource> ().enabled = false;
 			}
 		}
-		
-		Debug.Log (realm);
+			
+		if (startRealm == 1 || startRealm == -1) {
+			for(int i = 0; i < realm2Objects.Length; i++) {
+				GameObject curObject = realm2Objects[i];
+
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				curObject.GetComponent<SpriteRenderer>().enabled = true;
+				curObject.GetComponent<BoxCollider2D>().enabled = true;
+				curObject.GetComponent<AudioSource>().enabled = true;
+			}
+		} else {
+			for (int i = 0; i < realm2Objects.Length; i++) {
+				GameObject curObject = realm2Objects [i];
+
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				curObject.GetComponent<AudioSource> ().enabled = false;
+			}
+		}
+
+		if (startRealm == 2 || startRealm == -2) {
+			for(int i = 0; i < realm3Objects.Length; i++) {
+				GameObject curObject = realm3Objects[i];
+
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				curObject.GetComponent<SpriteRenderer>().enabled = true;
+				curObject.GetComponent<BoxCollider2D>().enabled = true;
+				curObject.GetComponent<AudioSource>().enabled = true;
+			}
+		} else {
+			for (int i = 0; i < realm3Objects.Length; i++) {
+				GameObject curObject = realm3Objects [i];
+
+				curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				curObject.GetComponent<AudioSource> ().enabled = false;
+			}
+		}
 	}
 }

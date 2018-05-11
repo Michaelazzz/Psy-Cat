@@ -40,14 +40,15 @@ public class PlayerController : MonoBehaviour
 	private bool forward = true;
 
 	//sound effects
+	private AudioSource source;
 	public AudioClip jumpSound;
-	private AudioSource playerSource;
+	public float volLowRange = 0.5f;
+	public float volHighRange = 1f;
 
 	void Awake()
 	{
 		//get audio source from player
-		playerSource = GetComponent<AudioSource>();
-		playerSource.clip = jumpSound;
+		source = GetComponent<AudioSource>();
 
 		tempSpeed = speed;
 		hit = Physics2D.Raycast (transform.position, Vector2.left, raycastDistance, boxMask);
@@ -62,7 +63,8 @@ public class PlayerController : MonoBehaviour
 		//jump
 		if (Input.GetButtonDown ("Jump")) {
 			//play jump sound
-			playerSource.Play();
+			float vol = Random.Range(volLowRange, volHighRange);
+			source.PlayOneShot (jumpSound, vol);
 
 			jumpRequest = true;
 		}
@@ -71,8 +73,10 @@ public class PlayerController : MonoBehaviour
 	//physics in fixed update
 	void FixedUpdate()
 	{
-		//grounded?
+		//grounded
 		grounded = isGrounded();
+		//y velocity of player
+		float velocityY = playerRigidBody.velocity.y;
 
 		//get movement direction
 		float horizontal = Input.GetAxis("Horizontal");
@@ -172,6 +176,7 @@ public class PlayerController : MonoBehaviour
 		animator.SetBool ("pushpull", pushpull);
 		animator.SetBool ("grounded", grounded);
 		animator.SetFloat("velocityX", Mathf.Abs(horizontal));
+		animator.SetFloat("velocityY", velocityY);
 	}
 
 	void Flip()
@@ -182,20 +187,6 @@ public class PlayerController : MonoBehaviour
 		//flip on the x axis
 		animator.transform.Rotate (new Vector3(0, 180, 0));
 	}
-
-	/*void onCollisionEnter(Collision2D collision)
-	{
-		if (collision.gameObject.layer == ground) {
-			grounded = true;
-			Debug.Log ("hit ground");
-		}
-	}
-
-	void onCollisionExit(Collision2D collision)
-	{
-		if (collision.gameObject.layer == ground)
-			grounded = false;
-	}*/
 
 	private bool isGrounded()
 	{

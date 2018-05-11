@@ -4,52 +4,47 @@ using UnityEngine;
 
 public class BoxAudio : MonoBehaviour {
 
+	//player
+	private Transform player;
+
 	//public AudioClip fallSound;
-	public AudioSource source;
+	private AudioSource source;
 
-	//RaycastHit2D hit;							//raycast to detect collision
-	//public float raycastDistance = 1f;			//distance raycast will be projected
-	//private GameObject surface;					//the surface the raycast has hit
-	//public LayerMask surfaceMask;
-	//public bool ground = false;
+	//distance
+	float distance;
 
-	void Start () {
-		//draw ray cast
-		//hit = Physics2D.Raycast (transform.position, Vector2.down, raycastDistance, surfaceMask);
+	//distance range
+	public float range = 11;
+	public float minRange = 2;
 
+	//volume range
+	public float volClose = 0.3f;
+	public float volFar = 0f;
+
+	void Start () 
+	{
+		//player
+		player = GameObject.Find ("Player").transform;
+		//audio source
 		source = GetComponent<AudioSource>();
-		//source.clip = fallSound;
 	}
 	
 	void Update () 
 	{
-		//Physics2D.queriesStartInColliders = false;
-		//hit = Physics2D.Raycast (transform.position, Vector2.down, raycastDistance, surfaceMask);
+		//get distance from box to player
+		distance = Vector3.Distance(player.position, transform.position);
 
-		//if (hit.collider != null) {
-		//	ground = true;
-		//	Debug.Log ("hit ground");
-			//source.Play ();
-		//} else if (hit.collider == null) {
-		//	ground = false;
-		//}
-
-		//if (ground)
-			
+		//calculate volume
+		if (distance > range || distance < minRange)
+			source.volume = volFar;
+		else
+			source.volume = volClose;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		Debug.Log ("hit ground");
-		//leayer 8 is environemt
+		//layer 8 is environemt
 		if(collision.gameObject.layer == 8)
 			source.Play ();
 	}
-
-	//void OnDrawGizmos()
-	//{
-	//	Gizmos.color = Color.yellow;
-
-	//	Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.down * raycastDistance);
-	//}
 }
