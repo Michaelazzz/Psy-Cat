@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private float jumpSpeed = 10f;
 	[SerializeField]
-	private float fallMultiplier = 2;
+	private float fallMultiplier = 3;
 	[SerializeField]
 	private float lowJumpMultiplier = 2;
 	private bool jumpRequest = false;
@@ -45,6 +45,13 @@ public class PlayerController : MonoBehaviour
 	public float volLowRange = 0.5f;
 	public float volHighRange = 1f;
 
+	//enemy
+	public float enemyDetectionArea = 0.5f;
+	public LayerMask enemyMask;
+	RaycastHit2D enemyHitLeft;
+	RaycastHit2D enemyHitRight;
+	bool dead = false;
+
 	void Awake()
 	{
 		//get audio source from player
@@ -52,6 +59,10 @@ public class PlayerController : MonoBehaviour
 
 		tempSpeed = speed;
 		hit = Physics2D.Raycast (transform.position, Vector2.left, raycastDistance, boxMask);
+
+		//enemy detection raycasts
+		enemyHitLeft = Physics2D.Raycast (transform.position, Vector2.left, enemyDetectionArea, enemyMask);
+		enemyHitRight = Physics2D.Raycast (transform.position, Vector2.right, enemyDetectionArea, enemyMask);
 
 		playerRigidBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
@@ -73,29 +84,108 @@ public class PlayerController : MonoBehaviour
 	//physics in fixed update
 	void FixedUpdate()
 	{
-		//grounded
-		grounded = isGrounded();
-		//y velocity of player
-		float velocityY = playerRigidBody.velocity.y;
+		//if player is dead diable controls
+		if (!dead) {
+			//grounded
+			grounded = isGrounded ();
 
-		//get movement direction
-		float horizontal = Input.GetAxis("Horizontal");
+			//enemy detection
+			detectEnemy ();
 
-		//add velocity to the rigid body in the direction of the movement * our speed
-		playerRigidBody.velocity = new Vector2(horizontal * speed, playerRigidBody.velocity.y);
+			//y velocity of player
+			float velocityY = playerRigidBody.velocity.y;
 
-		//change speed if push/pull is true
-		if (pushpull) 
-			speed = pushSpeed;
-		else 
-			speed = tempSpeed;
+			//get movement direction
+			float horizontal = Input.GetAxis ("Horizontal");
 
-		//jump
+			//add velocity to the rigid body in the direction of the movement * our speed
+			playerRigidBody.velocity = new Vector2 (horizontal * speed, playerRigidBody.velocity.y);
+
+			//change speed if push/pull is true
+			if (pushpull)
+				speed = pushSpeed;
+			else
+				speed = tempSpeed;
+
+			//jump
+			jump();
+
+			//push box collision detecting
+			Physics2D.queriesStartInColliders = false;
+
+			if (!facingRight) {
+				//push box raycast left
+				hit = Physics2D.Raycast (transform.position, Vector2.left, raycastDistance, boxMask);
+			} else {
+				//push box raycast right
+				hit = Physics2D.Raycast (transform.position, Vector2.right, raycastDistance, boxMask);
+			}
+
+			//if push/pull is true the player cannot flip
+			if (!pushpull) {
+				//flip
+				//if we are not moving left anymore then flip the player
+				if (horizontal > 0 && !facingRight) {
+					//flip player
+					Flip ();
+				} else if (horizontal < -0 && facingRight) {
+					//flip player
+					Flip ();
+				}
+			} 
+
+			if (!facingRight) {
+				if (horizontal < 0) {
+					forward = true;
+				} else if (horizontal > 0) {
+					forward = false;
+				}
+			} else {
+				if (horizontal > 0) {
+					forward = true;
+				} else if (horizontal < 0) {
+					forward = false;
+				}
+			}
+
+			//if colliding with object and push/pull button is being pressed
+			if (hit.collider != null && Input.GetButtonDown ("PushPull")) {
+				pushpull = true;
+				box = hit.collider.gameObject;
+				box.GetComponent<FixedJoint2D> ().enabled = true;
+				box.GetComponent<FixedJoint2D> ().connectedBody = playerRigidBody;
+
+				//Debug.Log ("Pushing/Pulling");
+			} else if (!Input.GetButton ("PushPull") && box != null) { //alternative -> Input.GetButtonUp ("PushPull")
+				pushpull = false;
+				box.GetComponent<FixedJoint2D> ().enabled = false;
+			}
+
+			//animator variables
+			animator.SetBool ("forward", forward);
+			animator.SetBool ("pushpull", pushpull);
+			animator.SetBool ("grounded", grounded);
+			animator.SetFloat ("velocityX", Mathf.Abs (horizontal));
+			animator.SetFloat ("velocityY", velocityY);
+			animator.SetBool ("dead", dead);
+		}
+	}
+
+	void Flip()
+	{
+		//saying we are facing in the opposite direction
+		facingRight = !facingRight;
+
+		//flip on the x axis
+		animator.transform.Rotate (new Vector3(0, 180, 0));
+	}
+
+	void jump()
+	{
 		//if button is pressed and player is grounded
-		if (jumpRequest && grounded) 
-		{
+		if (jumpRequest && grounded) {
 			//playerRigidBody.velocity = Vector2.up * jumpSpeed;
-			playerRigidBody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+			playerRigidBody.AddForce (Vector2.up * jumpSpeed, ForceMode2D.Impulse);
 
 			//if player is falling
 			if (playerRigidBody.velocity.y < 0) {
@@ -106,9 +196,7 @@ public class PlayerController : MonoBehaviour
 				playerRigidBody.gravityScale = 1f;
 			}
 			jumpRequest = false;
-		} 
-		else if (!Input.GetButton ("Jump")) //cancel jump if player lets go
-		{
+		} else if (!Input.GetButton ("Jump")) { //cancel jump if player lets go
 			if (playerRigidBody.velocity.y > 0) {
 				playerRigidBody.gravityScale = lowJumpMultiplier;
 				//alternative
@@ -117,75 +205,17 @@ public class PlayerController : MonoBehaviour
 				playerRigidBody.gravityScale = 1f;
 			}
 		}
-
-		//push box collision detecting
-		Physics2D.queriesStartInColliders = false;
-
-		if (!facingRight) {
-			//push box raycast left
-			hit = Physics2D.Raycast (transform.position, Vector2.left, raycastDistance, boxMask);
-		} else {
-			//push box raycast right
-			hit = Physics2D.Raycast (transform.position, Vector2.right, raycastDistance, boxMask);
-		}
-
-		//if push/pull is true the player cannot flip
-		if (!pushpull) {
-			//flip
-			//if we are not moving left anymore then flip the player
-			if (horizontal > 0 && !facingRight) {
-				//flip player
-				Flip ();
-			} else if (horizontal < -0 && facingRight) {
-				//flip player
-				Flip ();
-			}
-		} 
-
-		if (!facingRight) {
-			if (horizontal < 0) {
-				forward = true;
-			} else if (horizontal > 0) {
-				forward = false;
-			}
-		} else {
-			if (horizontal > 0) {
-				forward = true;
-			} else if (horizontal < 0) {
-				forward = false;
-			}
-		}
-
-		//if colliding with object and push/pull button is being pressed
-		if (hit.collider != null && Input.GetButtonDown ("PushPull")) {
-			pushpull = true;
-			box = hit.collider.gameObject;
-			box.GetComponent<FixedJoint2D> ().enabled = true;
-			box.GetComponent<FixedJoint2D> ().connectedBody = playerRigidBody;
-
-			//Debug.Log ("Pushing/Pulling");
-		} 
-		else if(!Input.GetButton ("PushPull") && box != null) //alternative -> Input.GetButtonUp ("PushPull")
-		{
-			pushpull = false;
-			box.GetComponent<FixedJoint2D> ().enabled = false;
-		}
-
-		//animator variables
-		animator.SetBool ("forward", forward);
-		animator.SetBool ("pushpull", pushpull);
-		animator.SetBool ("grounded", grounded);
-		animator.SetFloat("velocityX", Mathf.Abs(horizontal));
-		animator.SetFloat("velocityY", velocityY);
 	}
 
-	void Flip()
+	void detectEnemy()
 	{
-		//saying we are facing in the opposite direction
-		facingRight = !facingRight;
+		enemyHitLeft = Physics2D.Raycast (transform.position, Vector2.left, enemyDetectionArea, enemyMask);
+		enemyHitRight = Physics2D.Raycast (transform.position, Vector2.right, enemyDetectionArea, enemyMask);
 
-		//flip on the x axis
-		animator.transform.Rotate (new Vector3(0, 180, 0));
+		//player dies
+		if (enemyHitLeft.collider != null || enemyHitRight.collider != null){
+			dead = true;
+		}
 	}
 
 	private bool isGrounded()
@@ -213,5 +243,9 @@ public class PlayerController : MonoBehaviour
 			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
 		else if(facingRight)
 			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
+
+		//enemy detection
+		Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * enemyDetectionArea);
+		Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * enemyDetectionArea);
 	}
 }
