@@ -4,7 +4,7 @@
     <Files>
       <File FileName="Assets\Scripts\SceneManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\PlayerChangeRealms.cs" Line="129" Column="31" />
+      <File FileName="Assets\Scripts\Main Character\PlayerChangeRealms.cs" Line="71" Column="5" />
       <File FileName="Assets\Scripts\UIChangeRealms.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

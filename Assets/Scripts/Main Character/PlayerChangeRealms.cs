@@ -52,26 +52,30 @@ public class PlayerChangeRealms : MonoBehaviour {
 			for (int i = 0; i < realm1Objects.Length; i++) {
 				GameObject curObject = realm1Objects [i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
-				
-				curObject.GetComponent<SpriteRenderer> ().enabled = true;
+				curObject.SetActive(true);
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = true;
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				
+				//curObject.GetComponent<SpriteRenderer> ().enabled = true;
+
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = true;
 				//curObject.GetComponent<AudioSource> ().enabled = true;
 			}
 		} else {
 			for (int i = 0; i < realm1Objects.Length; i++) {
 				GameObject curObject = realm1Objects [i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
-				
-				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				curObject.SetActive(false);
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				
+				//curObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = false;
 				//curObject.GetComponent<AudioSource> ().enabled = false;
 			}
 		}
@@ -80,26 +84,29 @@ public class PlayerChangeRealms : MonoBehaviour {
 			for(int i = 0; i < realm2Objects.Length; i++) {
 				GameObject curObject = realm2Objects[i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				curObject.SetActive(true);
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 
-				curObject.GetComponent<SpriteRenderer>().enabled = true;
+				//curObject.GetComponent<SpriteRenderer>().enabled = true;
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = true;
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = true;
 				//curObject.GetComponent<AudioSource>().enabled = true;
 			}
 		} else {
 			for (int i = 0; i < realm2Objects.Length; i++) {
 				GameObject curObject = realm2Objects [i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				curObject.SetActive(false);
 
-				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				//curObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = false;
 				//curObject.GetComponent<AudioSource> ().enabled = false;
 			}
 		}
@@ -108,26 +115,30 @@ public class PlayerChangeRealms : MonoBehaviour {
 			for(int i = 0; i < realm3Objects.Length; i++) {
 				GameObject curObject = realm3Objects[i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
+				curObject.SetActive(true);
 
-				curObject.GetComponent<SpriteRenderer>().enabled = true;
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = false;
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = true;
+				//curObject.GetComponent<SpriteRenderer>().enabled = true;
+
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = true;
 				//curObject.GetComponent<AudioSource>().enabled = true;
 			}
 		} else {
 			for (int i = 0; i < realm3Objects.Length; i++) {
 				GameObject curObject = realm3Objects [i];
 
-				if(curObject.layer == 10)
-					curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
+				curObject.SetActive(false);
 
-				curObject.GetComponent<SpriteRenderer> ().enabled = false;
+				//if(curObject.layer == 10)
+				//	curObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 
-				if(curObject.layer == 8 || curObject.layer == 10)
-					curObject.GetComponent<BoxCollider2D> ().enabled = false;
+				//curObject.GetComponent<SpriteRenderer> ().enabled = false;
+
+				//if(curObject.layer == 8 || curObject.layer == 10)
+				//	curObject.GetComponent<BoxCollider2D> ().enabled = false;
 				//curObject.GetComponent<AudioSource> ().enabled = false;
 			}
 		}
