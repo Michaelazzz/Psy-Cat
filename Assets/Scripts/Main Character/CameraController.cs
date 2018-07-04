@@ -8,9 +8,10 @@ public class CameraController : MonoBehaviour {
 	public float smoothSpeed = 10f;
 	public Vector3 offset;
 
-	void Start()
+	void Awake()
 	{
 		target = GameObject.Find ("Player").transform;
+		transform.position = target.position;
 	}
 
 	//when this function is called the character is already done with its movement

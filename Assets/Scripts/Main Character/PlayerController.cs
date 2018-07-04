@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private float pushSpeed = 5f;				//how fast the player moves while push or pulling
 	private Rigidbody2D playerRigidBody;		//the physics of the player
+	[SerializeField]
 	private bool facingRight = false;			//which way the player is facing
 	Animator animator;							//get reference to the animator
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
 	public LayerMask enemyMask;
 	RaycastHit2D enemyHitLeft;
 	RaycastHit2D enemyHitRight;
+	RaycastHit2D enemyHitDown;
 	public bool dead = false;
 
 	//environment detection
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour
 			float horizontal = Input.GetAxis ("Horizontal");
 
 			//if button is being pressed and front of character is colliding with the environment
-			if (environmentCollider.IsTouchingLayers(environmentMask) && Mathf.Abs(horizontal) > 0f) 
+			if (environmentCollider.IsTouchingLayers(environmentMask) && Mathf.Abs(horizontal) > 0f && !grounded) 
 			{
 				horizontal = 0;
 			}
@@ -220,36 +222,29 @@ public class PlayerController : MonoBehaviour
 	void jump()
 	{
 		//if button is pressed and player is grounded
-		if (jumpRequest && grounded) 
-		{
+		if (jumpRequest && grounded) {
 			//playerRigidBody.velocity = Vector2.up * jumpSpeed;
 			playerRigidBody.AddForce (Vector2.up * jumpSpeed, ForceMode2D.Impulse);
 
-			//if player is falling
-			if (playerRigidBody.velocity.y < 0) 
-			{
-				playerRigidBody.gravityScale = fallMultiplier;
-				//alternative
-				//playerRigidBody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-			} 
-			else 
-			{
-				playerRigidBody.gravityScale = 1f;
-			}
 			jumpRequest = false;
-		} 
-		else if (!Input.GetButton ("Jump")) //cancel jump if player lets go
-		{ 
-			if (playerRigidBody.velocity.y > 0) 
-			{
+		} else if (!Input.GetButton ("Jump")) { //cancel jump if player lets go
+			if (playerRigidBody.velocity.y > 0) {
 				playerRigidBody.gravityScale = lowJumpMultiplier;
 				//alternative
 				//playerRigidBody.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 			} 
-			else 
-			{
-				playerRigidBody.gravityScale = 1f;
-			}
+			//else {
+			//	playerRigidBody.gravityScale = 1f;
+			//}
+		} else if (playerRigidBody.velocity.y < 0) //if player is falling
+		{
+			playerRigidBody.gravityScale = fallMultiplier;
+			//alternative
+			//playerRigidBody.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+		} 
+		else
+		{
+			playerRigidBody.gravityScale = 1f;
 		}
 	}
 
@@ -257,9 +252,10 @@ public class PlayerController : MonoBehaviour
 	{
 		enemyHitLeft = Physics2D.Raycast (transform.position, Vector2.left, enemyDetectionArea, enemyMask);
 		enemyHitRight = Physics2D.Raycast (transform.position, Vector2.right, enemyDetectionArea, enemyMask);
+		enemyHitDown = Physics2D.Raycast (transform.position, Vector2.down, enemyDetectionArea, enemyMask);
 
 		//player dies
-		if (enemyHitLeft.collider != null || enemyHitRight.collider != null)
+		if (enemyHitLeft.collider != null || enemyHitRight.collider != null || enemyHitDown.collider != null)
 		{
 			dead = true;
 			StartCoroutine (LoadScene());
@@ -269,7 +265,7 @@ public class PlayerController : MonoBehaviour
 	private bool isGrounded()
 	{
 		//falling or on ground
-		if (playerRigidBody.velocity.y <= 0) 
+		if (playerRigidBody.velocity.y == 0) 
 		{
 			foreach (Transform point in groundPoints) 
 			{
@@ -290,7 +286,8 @@ public class PlayerController : MonoBehaviour
 	{
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (1.5f);
-		SceneManager.LoadScene (sceneName);
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		//SceneManager.LoadScene (sceneName);
 	}
 		
 	void OnDrawGizmos()
