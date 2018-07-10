@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\Environment\Parallax.cs" />
      <Compile Include="Assets\Scripts\Environment\ScrollingBackground.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
+     <Compile Include="Assets\Scripts\LoadSceneByIndex.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
@@ -83,6 +84,8 @@
      <Compile Include="Assets\Scripts\MusicTransition.cs" />
      <Compile Include="Assets\Scripts\Not Using\PhysicsObject.cs" />
      <Compile Include="Assets\Scripts\Not Using\PlayerPlatformerController.cs" />
+     <Compile Include="Assets\Scripts\PauseGame.cs" />
+     <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\UIChangeRealms.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
