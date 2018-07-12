@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: 41b71685004e13240b382ab1a417ca01
-timeCreated: 1531302445
+timeCreated: 1531404222
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Eye 6_0
+    21300002: Eye 6_1
+    21300004: Eye 6_2
+    21300006: Eye 6_3
+    21300008: Eye 6_4
+    21300010: Eye 6_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +74,85 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Eye 6_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 640
+        width: 472
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 6_1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 640
+        width: 472
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 6_2
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 363
+        width: 470
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 6_3
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 310
+        width: 470
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 6_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 472
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 6_5
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 80
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

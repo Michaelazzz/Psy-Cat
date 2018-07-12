@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 726b89b28dc987745a745a7d80ab2faa
-timeCreated: 1531302448
+timeCreated: 1531403154
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Eye 5_0
+    21300002: Eye 5_1
+    21300004: Eye 5_2
+    21300006: Eye 5_3
+    21300008: Eye 5_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +73,72 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Eye 5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1055
+        width: 784
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 5_1
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1055
+        width: 784
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 5_2
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 546
+        width: 800
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 5_3
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 546
+        width: 800
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 5_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 778
+        height: 501
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

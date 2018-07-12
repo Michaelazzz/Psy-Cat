@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 931642b75a46fd54b836d2e38106695a
-timeCreated: 1531302449
+timeCreated: 1531408360
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Eye 11_0
+    21300002: Eye 11_1
+    21300004: Eye 11_2
+    21300006: Eye 11_3
+    21300008: Eye 11_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +73,72 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Eye 11_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 393
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 11_1
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 592
+        width: 393
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 11_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 393
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 11_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 322
+        width: 393
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 11_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 393
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

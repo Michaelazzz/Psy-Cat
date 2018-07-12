@@ -1,9 +1,26 @@
 fileFormatVersion: 2
 guid: 5c849570783261f4fa835581e052ae7d
-timeCreated: 1531302446
+timeCreated: 1531407037
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Eye 9_0
+    21300002: Eye 9_1
+    21300004: Eye 9_2
+    21300006: Eye 9_3
+    21300008: Eye 9_4
+    21300010: Eye 9_5
+    21300012: Eye 9_6
+    21300014: Eye 9_7
+    21300016: Eye 9_8
+    21300018: Eye 9_9
+    21300020: Eye 9_10
+    21300022: Eye 9_11
+    21300024: Eye 9_12
+    21300026: Eye 9_13
+    21300028: Eye 9_14
+    21300030: Eye 9_15
+    21300032: Eye 9_16
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -68,7 +85,72 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Eye 9_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1005
+        width: 779
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 9_4
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1012
+        width: 779
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 9_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 550
+        width: 779
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 9_12
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 549
+        width: 779
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye 9_16
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 0
+        width: 748
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
