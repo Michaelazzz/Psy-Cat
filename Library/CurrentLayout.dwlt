@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 23
+  controlID: 3078
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 24
+  controlID: 3079
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,8 +181,8 @@ MonoBehaviour:
     y: 529
     width: 886
     height: 418
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 78
+  controlID: 3044
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -315,7 +315,7 @@ MonoBehaviour:
     y: 621
     width: 884
     height: 397
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -468,16 +468,16 @@ MonoBehaviour:
     - {x: 778.80005, y: 416.60004}
     - {x: 778.80005, y: 416.60004}
     - {x: 480.40002, y: 284.80002}
-    - {x: 778.80005, y: 443.6001}
+    - {x: 750.4, y: 256.80002}
     - {x: 778.80005, y: 464.60004}
     - {x: 778.80005, y: 416.60004}
     - {x: 480.40002, y: 284.80002}
-    - {x: 790.80005, y: 303.60004}
+    - {x: 750.4, y: 264.80002}
     - {x: 778.80005, y: 443.6001}
     - {x: 778.80005, y: 443.6001}
     - {x: 778.80005, y: 443.6001}
     - {x: 778.80005, y: 443.6001}
-    - {x: 690.4, y: 425.80002}
+    - {x: 750.4, y: 264.80002}
     - {x: 670.4, y: 367.80005}
     - {x: 670.4, y: 367.80005}
     - {x: 670.4, y: 367.80005}
@@ -537,14 +537,14 @@ MonoBehaviour:
     width: 884
     height: 508
   m_SceneLighting: 0
-  lastFramingTime: 3368.380234880783
+  lastFramingTime: 1455.5401555345018
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -21.2, y: 4.53, z: 0}
+    m_Target: {x: -27.711151, y: 9.161711, z: -0.08843043}
     speed: 2
-    m_Value: {x: -21.2, y: 4.53, z: 0}
+    m_Value: {x: -27.711151, y: 9.161711, z: -0.08843043}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -571,14 +571,14 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 30.175268
+    m_Target: 35.403446
     speed: 2
-    m_Value: 30.175268
+    m_Value: 35.403446
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -665,10 +665,10 @@ MonoBehaviour:
     width: 461
     height: 391
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42e6ffff
-    m_LastClickedID: -6590
-    m_ExpandedIDs: 42e6ffffe8fbffff00000000
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: a630000066300000ec2f0000b62f0000862f0000
+    m_LastClickedID: 12166
+    m_ExpandedIDs: d4ccf9ff9a0bfaff7ea0faff16f9ffffbcfaffffe8fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -728,19 +728,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Videos
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Videos
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity\Psy-cat
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 799}
-    m_SelectedIDs: e8380000
-    m_LastClickedID: 14568
-    m_ExpandedIDs: 000000004e26000084270000c42700003428000076280000122900008e290000a4290000c2290000f62900003e2a00006c2a0000d42b0000a82c0000b837000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c6270000
+    m_LastClickedID: 10182
+    m_ExpandedIDs: 000000004e26000078280000a6290000f8290000402a00006e2a0000d82b0000c637000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -768,7 +768,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e26000084270000c42700003428000076280000122900008e290000a4290000c2290000f62900003e2a00006c2a0000d42b0000a82c0000b8370000
+    m_ExpandedIDs: 000000004e2600007027000086270000362800007828000090290000a6290000c4290000402a00006e2a0000c637000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -796,21 +796,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 6e260000b82600001c280000d62d000000000000822e0000c42e0000f22700009c330000063700000a370000282b0000342900008e2b0000d6270000002b0000ec290000e02900005a2c0000
+    m_ExpandedInstanceIDs: 6e260000b82600001c280000d62d000000000000822e0000c42e0000f22700009c330000063700000a370000282b0000342900008e2b0000d6270000002b0000ec290000e02900005a2c00007c290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Videos
-      m_OriginalName: Videos
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 14568
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
