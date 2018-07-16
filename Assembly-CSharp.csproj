@@ -83,7 +83,10 @@
      <Compile Include="Assets\Scripts\PauseGame.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\HideEyes.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\ShowEyes.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialEyes.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialEyesClash.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialPoints.cs" />
      <Compile Include="Assets\Scripts\UIChangeRealms.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />

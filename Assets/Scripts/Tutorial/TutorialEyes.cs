@@ -33,7 +33,7 @@ public class TutorialEyes : MonoBehaviour {
 		if(blink)
 		{
 			blink = false;
-			Debug.Log (time);
+			//Debug.Log (time);
 			yield return new WaitForSeconds (time);
 			eyeAnim.SetTrigger ("close");
 			blink = true;
@@ -42,6 +42,6 @@ public class TutorialEyes : MonoBehaviour {
 
 	public float randomTime()
 	{
-		return Random.Range (4, 10);
+		return Random.Range (4f, 10f);
 	}
 }
