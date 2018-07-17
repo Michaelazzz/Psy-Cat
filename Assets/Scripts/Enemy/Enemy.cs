@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour {
 		//player not detected yet
 		if (detected == false) {
 			//patrol state
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
+			transform.Translate (Vector2.left * speed * Time.deltaTime);
 
 			RaycastHit2D groundInfo = Physics2D.Raycast (groundDetection.position, Vector2.down, distance);
 
