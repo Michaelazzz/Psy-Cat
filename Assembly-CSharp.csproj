@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Audio\BoxAudio.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+     <Compile Include="Assets\Scripts\FadeInUIChangeRealms.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
      <Compile Include="Assets\Scripts\LoadSceneByIndex.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraController.cs" />

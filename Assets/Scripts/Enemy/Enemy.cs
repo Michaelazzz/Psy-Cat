@@ -19,25 +19,31 @@ public class Enemy : MonoBehaviour {
 	public float followSpeed;
 	Transform target;
 
-	public float detectionArea = 4f;
-	public RaycastHit2D playerDetectedLeft;
-	public RaycastHit2D playerDetectedRight;
+	public BoxCollider2D detectionCollider;
+	//public float detectionArea = 4f;
+	//public RaycastHit2D playerDetectedLeft;
+	//public RaycastHit2D playerDetectedRight;
 	public bool detected = false;
 	public LayerMask detectionMask;
+
+	//animation
+	public Animator animator;
 
 	void Start()
 	{
 		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
 
 		//detect player raycasts
-		playerDetectedLeft = Physics2D.Raycast (transform.position, Vector2.left, detectionArea, detectionMask);
-		playerDetectedRight = Physics2D.Raycast (transform.position, Vector2.right, detectionArea, detectionMask);
+		//playerDetectedLeft = Physics2D.Raycast (transform.position, Vector2.left, detectionArea, detectionMask);
+		//playerDetectedRight = Physics2D.Raycast (transform.position, Vector2.right, detectionArea, detectionMask);
 	}
 
 	void Update()
 	{
 		//detect player on surface
 		DetectPlayer();
+
+
 
 		//player not detected yet
 		if (detected == false) {
@@ -60,6 +66,7 @@ public class Enemy : MonoBehaviour {
 		{
 			//follow player state
 			transform.position = Vector2.MoveTowards(transform.position, target.position, followSpeed * Time.deltaTime);
+			animator.SetBool ("detected", true);
 		}
 
 	}
@@ -67,10 +74,10 @@ public class Enemy : MonoBehaviour {
 	void DetectPlayer()
 	{
 		//update colliders
-		playerDetectedLeft = Physics2D.Raycast (transform.position, Vector2.left, detectionArea, detectionMask);
-		playerDetectedRight = Physics2D.Raycast (transform.position, Vector2.right, detectionArea, detectionMask);
+		//playerDetectedLeft = Physics2D.Raycast (transform.position, Vector2.left, detectionArea, detectionMask);
+		//playerDetectedRight = Physics2D.Raycast (transform.position, Vector2.right, detectionArea, detectionMask);
 
-		if (playerDetectedLeft.collider != null || playerDetectedRight.collider != null) {
+		if (detectionCollider.IsTouchingLayers(detectionMask)) {
 			detected = true;
 		} else {
 			detected = false;
@@ -85,7 +92,7 @@ public class Enemy : MonoBehaviour {
 		Gizmos.DrawLine (groundDetection.transform.position, (Vector2)groundDetection.transform.position + Vector2.down * distance);
 
 		//player detection
-		Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * detectionArea);
-		Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * detectionArea);
+		//Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * detectionArea);
+		//Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * detectionArea);
 	}
 }
