@@ -5,7 +5,7 @@ using UnityEngine;
 public class FadeInUIChangeRealms : MonoBehaviour {
 
 	public Animator animator;
-	public GameObject pickup;
+	//public GameObject pickup;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
@@ -16,7 +16,7 @@ public class FadeInUIChangeRealms : MonoBehaviour {
 			//let the pickup handle its fade out
 
 			//temp solution
-			pickup.SetActive(false);
+			//pickup.SetActive(false);
 		}
 	}
 }
