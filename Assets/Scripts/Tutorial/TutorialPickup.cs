@@ -7,9 +7,16 @@ public class TutorialPickup : MonoBehaviour {
 	public Animator pickupAnim;
 	public Animator pickupAnim2;
 
+	public GameObject player;
+	public Canvas canvas;
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		pickupAnim.SetTrigger ("out");
 		pickupAnim2.SetTrigger ("out");
+
+		//enable change realms script
+		player.GetComponent<PlayerChangeRealms> ().enabled = true;
+		canvas.GetComponent<UIChangeRealms> ().enabled = true;
 	}
 }
