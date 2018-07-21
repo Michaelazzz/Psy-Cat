@@ -86,9 +86,12 @@
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\Tutorial\HideEyes.cs" />
      <Compile Include="Assets\Scripts\Tutorial\ShowEyes.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialCutscene.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialEyes.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialEyesClash.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialPlayer.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialPoints.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" />
      <Compile Include="Assets\Scripts\UIChangeRealms.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
