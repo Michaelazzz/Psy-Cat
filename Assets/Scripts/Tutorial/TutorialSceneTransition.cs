@@ -17,7 +17,8 @@ public class TutorialSceneTransition : MonoBehaviour {
 
 	IEnumerator LoadScene()
 	{
-		musicAnim.SetTrigger ("mute");
+		if(musicAnim != null)
+			musicAnim.SetTrigger ("mute");
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
 		SceneManager.LoadScene (sceneName);
@@ -25,6 +26,8 @@ public class TutorialSceneTransition : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		StartCoroutine (LoadScene());
+		if (other.CompareTag ("Player")) {
+			StartCoroutine (LoadScene ());
+		}
 	}
 }
