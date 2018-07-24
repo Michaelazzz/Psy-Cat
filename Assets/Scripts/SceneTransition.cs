@@ -25,11 +25,14 @@ public class SceneTransition : MonoBehaviour {
 
 	IEnumerator LoadScene()
 	{
-		musicAnim.SetTrigger ("mute");
+		if (musicAnim != null) {
+			musicAnim.SetTrigger ("mute");
+		}
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (1.5f);
 		//destroy game master
-		Destroy(gameMaster);
+		if(gameMaster != null)
+			Destroy(gameMaster);
 		SceneManager.LoadScene (sceneName);
 	}
 
