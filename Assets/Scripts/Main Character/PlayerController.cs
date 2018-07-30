@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 	//physics in fixed update
 	void FixedUpdate()
 	{
-		//if player is dead diable controls
+		//if player is dead disable controls
 		if (!dead) {
 			//grounded
 			grounded = isGrounded ();
@@ -128,7 +128,10 @@ public class PlayerController : MonoBehaviour
 			//if button is being pressed and front of character is colliding with the environment
 			if (environmentCollider.IsTouchingLayers(environmentMask) && Mathf.Abs(horizontal) > 0f && !grounded) 
 			{
+				//stop horizontal movement
 				horizontal = 0;
+
+
 			}
 
 			//add velocity to the rigid body in the direction of the movement * our speed
