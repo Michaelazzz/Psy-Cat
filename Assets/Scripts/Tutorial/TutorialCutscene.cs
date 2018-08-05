@@ -6,11 +6,13 @@ public class TutorialCutscene : MonoBehaviour {
 
 	public GameObject[] floorObjects;
 	public float time;
+	public Animator cameraShake;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		for (int i = 0; i < floorObjects.Length; i++) {
-			//DropObject (i);
+			//camera shake
+			cameraShake.SetTrigger("shake");
 			StartCoroutine (DropObject (i));
 		}
 	}
