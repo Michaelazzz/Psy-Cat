@@ -74,6 +74,8 @@
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
+     <Compile Include="Assets\Scripts\Level 1\MovingPlatform.cs" />
+     <Compile Include="Assets\Scripts\Level 1\PlayerOnMovingPlatform.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
