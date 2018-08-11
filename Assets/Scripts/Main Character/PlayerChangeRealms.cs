@@ -52,6 +52,7 @@ public class PlayerChangeRealms : MonoBehaviour {
 	void ChangeRealms(int realm)
 	{
 		gm.currentRealm = realm;
+		transform.SetParent (null);
 
 		if (startRealm == 0) {
 			for (int i = 0; i < realm1Objects.Length; i++) {
