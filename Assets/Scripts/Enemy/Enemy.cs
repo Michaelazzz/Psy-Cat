@@ -62,6 +62,8 @@ public class Enemy : MonoBehaviour {
 					movingRight = true;
 				}
 			}
+
+			animator.SetBool ("detected", false);
 		} else //player detected
 		{
 			//follow player state
