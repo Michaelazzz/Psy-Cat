@@ -43,8 +43,6 @@ public class Enemy : MonoBehaviour {
 		//detect player on surface
 		DetectPlayer();
 
-
-
 		//player not detected yet
 		if (detected == false) {
 			//patrol state
