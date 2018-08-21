@@ -97,6 +97,7 @@
      <Compile Include="Assets\Scripts\UI\PauseGame.cs" />
      <Compile Include="Assets\Scripts\UI\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
+     <Compile Include="Assets\Scripts\UI\UIChangePanels.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangeRealms.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />

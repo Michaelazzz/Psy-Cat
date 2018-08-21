@@ -16,6 +16,7 @@ public class SceneTransition : MonoBehaviour {
 
 	//game master
 	public GameObject gameMaster;
+	public GameObject backgroundMusic;
 
 	void Update()
 	{
@@ -30,9 +31,6 @@ public class SceneTransition : MonoBehaviour {
 		}
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (1.5f);
-		//destroy game master
-		if(gameMaster != null)
-			Destroy(gameMaster);
 		SceneManager.LoadScene (sceneName);
 	}
 

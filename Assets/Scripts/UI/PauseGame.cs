@@ -14,13 +14,13 @@ public class PauseGame : MonoBehaviour {
 			{
 				canvas.gameObject.SetActive(true);
 				Time.timeScale = 0;
-				AudioListener.volume = 0;
+				//AudioListener.volume = 0;
 			} 
 			else 
 			{
 				canvas.gameObject.SetActive(false);
 				Time.timeScale = 1;
-				AudioListener.volume = 1;
+				//AudioListener.volume = 1;
 			}
 		}
 	}
