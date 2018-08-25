@@ -19,6 +19,17 @@ public class CameraController : MonoBehaviour {
 
 	void Update()
 	{
+		//mouse input
+		//if (Input.GetAxis ("MouseX") < 0) {
+		//	inputDirection.x = -1 * cameraMultiplier;
+		//} else if (Input.GetAxis ("MouseX") > 0) {
+		//	inputDirection.x = 1 * cameraMultiplier;
+		//} else if (Input.GetAxis ("MouseY") < 0) {
+		//	inputDirection.y = -1 * cameraMultiplier;
+		//} else if (Input.GetAxis ("MouseY") > 0) {
+		//	inputDirection.y = 1 * cameraMultiplier;
+		//}
+
 		inputDirection.x = Input.GetAxis ("RightStickXAxis") * cameraMultiplier;
 		inputDirection.y = Input.GetAxis ("RightStickYAxis") * cameraMultiplier;
 	}
