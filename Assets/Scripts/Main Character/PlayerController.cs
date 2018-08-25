@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 	RaycastHit2D enemyHitRight;
 	RaycastHit2D enemyHitDown;
 	public bool dead = false;
+	int deadNum = 0;
 
 	//environment detection
 	[Header("Environment Detection")]
@@ -111,7 +112,7 @@ public class PlayerController : MonoBehaviour
 	//physics in fixed update
 	void FixedUpdate()
 	{
-		//if player is dead diable controls
+		//if player is dead disable controls
 		if (!dead) {
 			//grounded
 			grounded = isGrounded ();
@@ -258,6 +259,8 @@ public class PlayerController : MonoBehaviour
 		if (enemyHitLeft.collider != null || enemyHitRight.collider != null || enemyHitDown.collider != null)
 		{
 			dead = true;
+			animator.SetInteger ("deadNumber", randomNum());
+
 			StartCoroutine (LoadScene());
 		}
 	}
@@ -290,6 +293,11 @@ public class PlayerController : MonoBehaviour
 		//SceneManager.LoadScene (sceneName);
 	}
 		
+	public int randomNum()
+	{
+		return Random.Range (0, 2);
+	}
+
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.yellow;
