@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
 	RaycastHit2D enemyHitRight;
 	RaycastHit2D enemyHitDown;
 	public bool dead = false;
-	int deadNum = 0;
 
 	//environment detection
 	[Header("Environment Detection")]
@@ -65,7 +64,6 @@ public class PlayerController : MonoBehaviour
 	//scene transition
 	[Header("Scene Transition")]
 	public Animator transitionAnim;
-	public string sceneName;
 
 	//sound effects
 	[Header("Sound Effects")]

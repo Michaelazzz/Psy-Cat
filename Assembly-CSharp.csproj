@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangePanels.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangeRealms.cs" />
+     <Compile Include="Assets\configureTutorialEyes.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
      <None Include="Assets\Anima2D\Version.txt" />
