@@ -14,10 +14,6 @@ public class SceneTransition : MonoBehaviour {
 	[Header("Music Transition")]
 	public Animator musicAnim;
 
-	//game master
-	public GameObject gameMaster;
-	public GameObject backgroundMusic;
-
 	void Update()
 	{
 		//condition for change

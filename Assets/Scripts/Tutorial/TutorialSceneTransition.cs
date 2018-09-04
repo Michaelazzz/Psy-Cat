@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TutorialSceneTransition : MonoBehaviour {
 
 	//game master
-	public GameObject gameMaster;
+	GameObject gameMaster;
 	//background music
 	GameObject backgroundMusic;
 
