@@ -17,6 +17,6 @@ public class TutorialPickup : MonoBehaviour {
 
 		//enable change realms script
 		player.GetComponent<PlayerChangeRealms> ().enabled = true;
-		canvas.GetComponent<UIChangeRealms> ().enabled = true;
+		canvas.GetComponentInChildren<UIChangeRealms>().enabled = true;
 	}
 }
