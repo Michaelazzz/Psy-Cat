@@ -17,9 +17,9 @@ public class RealmChangingPortal : MonoBehaviour {
 
 	//realm objects
 	//next realm objects
-	GameObject[] nextRealmObjects;
+	public GameObject[] nextRealmObjects;
 	//current realm objects
-	GameObject[] currentRealmObjects;
+	public GameObject[] currentRealmObjects;
 
 	//game master
 	private GameMaster gm;
@@ -49,15 +49,14 @@ public class RealmChangingPortal : MonoBehaviour {
 		}
 
 		nextRealmObjects = new GameObject[GameObject.FindGameObjectsWithTag(nextRealmName).Length];
-		currentRealmObjects = new GameObject[GameObject.FindGameObjectsWithTag(currentRealmName).Length];
-
 		nextRealmObjects = GameObject.FindGameObjectsWithTag (nextRealmName);
+
+		currentRealmObjects = new GameObject[GameObject.FindGameObjectsWithTag(currentRealmName).Length];
 		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);
 	}
 
 	void Update()
 	{
-		//get current realm
 		currentRealm = gm.currentRealm;
 
 		//get right tag for the current realm
@@ -76,8 +75,6 @@ public class RealmChangingPortal : MonoBehaviour {
 	//collide with player and change to specofoed realm
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		gm.currentRealm = nextRealm;
-
 		if (other.CompareTag ("Player")) {
 			//hide current realm objects
 			for (int i = 0; i < currentRealmObjects.Length; i++) {
@@ -92,6 +89,8 @@ public class RealmChangingPortal : MonoBehaviour {
 
 				curObject.SetActive (true);
 			}
+
+			gm.currentRealm = nextRealm;
 		}
 	}
 
