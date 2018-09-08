@@ -28,8 +28,10 @@ public class TutorialSceneTransition : MonoBehaviour {
 
 	IEnumerator LoadScene()
 	{
-		if(musicAnim != null)
+		if (musicAnim != null) {
+			musicAnim.enabled = true;
 			musicAnim.SetTrigger ("mute");
+		}
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
 

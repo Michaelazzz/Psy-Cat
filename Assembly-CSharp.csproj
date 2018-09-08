@@ -83,6 +83,7 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerPos.cs" />
+     <Compile Include="Assets\Scripts\ResetLevel.cs" />
      <Compile Include="Assets\Scripts\Tutorial\FadeInUIChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Tutorial\HideEyes.cs" />
      <Compile Include="Assets\Scripts\Tutorial\ShowEyes.cs" />
@@ -101,6 +102,7 @@
      <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangePanels.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangeRealms.cs" />
+     <Compile Include="Assets\Scripts\UI\VolumeController.cs" />
      <Compile Include="Assets\configureTutorialEyes.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />

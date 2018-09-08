@@ -9,14 +9,15 @@ public class LoadSceneByIndex : MonoBehaviour {
 
 	public void Load(string sceneName)
 	{
-		StartCoroutine (LoadScene (sceneName));
+		SceneManager.LoadScene (sceneName);
+		//StartCoroutine (LoadScene (sceneName));
 	}
 
-	IEnumerator LoadScene(string sceneName)
-	{
+	//IEnumerator LoadScene(string sceneName)
+	//{
 		//if(musicAnim != null)
 		//	musicAnim.SetTrigger ("mute");
-		yield return new WaitForSeconds (1.5f);
-		SceneManager.LoadScene (sceneName);
-	}
+		//yield return new WaitForSeconds (1.5f);
+		//SceneManager.LoadScene (sceneName);
+	//}
 }

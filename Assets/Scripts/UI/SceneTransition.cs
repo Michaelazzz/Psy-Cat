@@ -23,6 +23,7 @@ public class SceneTransition : MonoBehaviour {
 	IEnumerator LoadScene()
 	{
 		if (musicAnim != null) {
+			musicAnim.enabled = true;
 			musicAnim.SetTrigger ("mute");
 		}
 		transitionAnim.SetTrigger ("dead");
