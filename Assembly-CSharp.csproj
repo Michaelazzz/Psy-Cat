@@ -86,6 +86,8 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerPos.cs" />
      <Compile Include="Assets\Scripts\ResetLevel.cs" />
+     <Compile Include="Assets\Scripts\SaveAndLoad.cs" />
+     <Compile Include="Assets\Scripts\SaveLevel.cs" />
      <Compile Include="Assets\Scripts\Tutorial\FadeInUIChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Tutorial\HideEyes.cs" />
      <Compile Include="Assets\Scripts\Tutorial\ShowEyes.cs" />
