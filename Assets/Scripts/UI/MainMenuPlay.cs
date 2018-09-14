@@ -20,12 +20,29 @@ public class MainMenuPlay : MonoBehaviour {
 	[Header("Video")]
 	public VideoPlayer video;
 
-	public void Play()
+	[Header("Save and Load")]
+	public int savedLevel;
+	private SaveAndLoad sal;
+
+	void Start()
 	{
-		StartCoroutine (LoadScene ());
+		//get save and load component to use
+		sal = this.GetComponent<SaveAndLoad> ();
+		savedLevel = sal.Load ();
 	}
 
-	IEnumerator LoadScene()
+	public void PlayContinue()
+	{
+		StartCoroutine (LoadScene (sal.Load()));
+	}
+
+	public void PlayNew()
+	{
+		sal.Delete ();
+		StartCoroutine (LoadScene (sceneIndex));
+	}
+
+	IEnumerator LoadScene(int index)
 	{
 		video.Play ();
 		if(musicAnim != null)
@@ -33,6 +50,6 @@ public class MainMenuPlay : MonoBehaviour {
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
 		//SceneManager.LoadScene (sceneName);
-		SceneManager.LoadScene (sceneIndex);
+		SceneManager.LoadScene (index);
 	}
 }

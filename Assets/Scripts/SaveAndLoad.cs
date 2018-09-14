@@ -5,17 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class SaveAndLoad : MonoBehaviour {
 
-	private static SaveAndLoad instance;
-	public int level;
-	public bool continueGame = false;
+	//private static SaveAndLoad instance;
+	//int level;
+	//int continueGame = 0;		//0->false 1->true
 
-	void Awake(){
-		if (instance == null) {
-			instance = this;
-			DontDestroyOnLoad (instance);
+	public void Save(int level)
+	{
+		PlayerPrefs.SetInt ("LevelKey", level);
+	}
+
+
+	public int Load()
+	{
+		if (PlayerPrefs.HasKey("LevelKey")) {
+			//return the saved level
+			return PlayerPrefs.GetInt ("LevelKey", 0);
 		} else {
-			Destroy (gameObject);
+			//return 1 (the first level) if there has not been a save yet
+			return 1;
 		}
-			
+	}
+
+	public void Delete()
+	{
+		PlayerPrefs.DeleteAll ();
 	}
 }

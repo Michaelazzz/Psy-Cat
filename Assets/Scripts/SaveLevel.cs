@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveLevel : MonoBehaviour {
 
+	//private GameMaster gm;
 	private SaveAndLoad sal;
 
 	//determining if it is a palyable level
@@ -19,13 +20,21 @@ public class SaveLevel : MonoBehaviour {
 		validLevels [2] = 4;
 
 		//get scene index when the scene is loaded
-		sal = GameObject.FindGameObjectWithTag ("SAL").GetComponent<SaveAndLoad> ();
+		//gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
+
+		//get save and load component to use
+		sal = this.GetComponent<SaveAndLoad> ();
 
 		int curLevel = SceneManager.GetActiveScene ().buildIndex;
 
 		//set the level in the save as the current level if it is valid
 		if(validLevels[0] == curLevel || validLevels[1] == curLevel || validLevels[2] == curLevel)
-			sal.level = curLevel;
+		{
+			//save current level
+			sal.Save(curLevel);
+			//gm.level = curLevel;
+		}
+
 	}
 
 }

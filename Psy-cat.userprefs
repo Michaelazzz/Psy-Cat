@@ -2,12 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenuPlay.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\VolumeController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\SceneTransition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SaveAndLoad.cs" Line="10" Column="35" />
-      <File FileName="Assets\Scripts\SaveLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="12" Column="4" />
+      <File FileName="Assets\Scripts\UI\Resume.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="4" Column="35" />
+      <File FileName="Assets\Scripts\ResetLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\PauseGame.cs" Line="22" Column="4" />
+      <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

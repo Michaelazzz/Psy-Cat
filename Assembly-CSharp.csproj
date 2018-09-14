@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scripts\Tutorial\TutorialPoints.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" />
      <Compile Include="Assets\Scripts\UI\LoadSceneByIndex.cs" />
+     <Compile Include="Assets\Scripts\UI\MainMenuLayout.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuPlay.cs" />
      <Compile Include="Assets\Scripts\UI\MusicTransition.cs" />
      <Compile Include="Assets\Scripts\UI\PauseGame.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour {
 
@@ -10,11 +11,13 @@ public class PauseGame : MonoBehaviour {
 
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.Escape)){
-			if (GameIsPaused) {
-				Resume ();
-			} else {
-				Pause ();
+		if (SceneManager.GetActiveScene ().buildIndex != 0) {
+			if (Input.GetKeyDown (KeyCode.Escape)) {
+				if (GameIsPaused) {
+					Resume ();
+				} else {
+					Pause ();
+				}
 			}
 		}
 	}

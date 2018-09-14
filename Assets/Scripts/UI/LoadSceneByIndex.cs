@@ -9,6 +9,7 @@ public class LoadSceneByIndex : MonoBehaviour {
 
 	public void Load(string sceneName)
 	{
+		
 		SceneManager.LoadScene (sceneName);
 		//StartCoroutine (LoadScene (sceneName));
 	}
