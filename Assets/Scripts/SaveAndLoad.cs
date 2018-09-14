@@ -7,7 +7,7 @@ public class SaveAndLoad : MonoBehaviour {
 
 	private static SaveAndLoad instance;
 	public int level;
-	public Vector2 lastCheckPointPos;
+	public bool continueGame = false;
 
 	void Awake(){
 		if (instance == null) {

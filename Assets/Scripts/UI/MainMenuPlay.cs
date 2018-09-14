@@ -9,7 +9,8 @@ public class MainMenuPlay : MonoBehaviour {
 	//scene transition
 	[Header("Scene Transistion")]
 	public Animator transitionAnim;
-	public string sceneName;
+	//public string sceneName;
+	public int sceneIndex;
 	public float time = 1.5f;
 
 	//music transition
@@ -31,6 +32,7 @@ public class MainMenuPlay : MonoBehaviour {
 			musicAnim.SetTrigger ("mute");
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
-		SceneManager.LoadScene (sceneName);
+		//SceneManager.LoadScene (sceneName);
+		SceneManager.LoadScene (sceneIndex);
 	}
 }
