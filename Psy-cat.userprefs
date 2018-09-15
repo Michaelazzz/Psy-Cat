@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenuLayout.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\SetEventSystemButton.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\Resume.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ResetLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\PauseGame.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenuLayout.cs" Line="27" Column="74" />
+      <File FileName="Assets\Scripts\UI\MainMenuLayout.cs" Line="28" Column="4" />
+      <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\SceneTransition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\SetEventSystemButton.cs" Line="30" Column="28" />
+      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
