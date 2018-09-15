@@ -1,12 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenuPlay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenuLayout.cs">
     <Files>
       <File FileName="Assets\Scripts\UI\Resume.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="4" Column="35" />
+      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ResetLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\PauseGame.cs" Line="22" Column="4" />
+      <File FileName="Assets\Scripts\UI\PauseGame.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\MainMenuLayout.cs" Line="27" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
