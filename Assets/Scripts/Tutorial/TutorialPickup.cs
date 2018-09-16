@@ -12,11 +12,13 @@ public class TutorialPickup : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		pickupAnim.SetTrigger ("out");
-		pickupAnim2.SetTrigger ("out");
+		if (other.CompareTag ("Player")) {
+			pickupAnim.SetTrigger ("out");
+			pickupAnim2.SetTrigger ("out");
 
-		//enable change realms script
-		player.GetComponent<PlayerChangeRealms> ().enabled = true;
-		canvas.GetComponentInChildren<UIChangeRealms>().enabled = true;
+			//enable change realms script
+			player.GetComponent<PlayerChangeRealms> ().enabled = true;
+			canvas.GetComponentInChildren<UIChangeRealms> ().enabled = true;
+		}
 	}
 }

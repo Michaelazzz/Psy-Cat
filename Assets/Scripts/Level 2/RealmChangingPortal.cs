@@ -72,10 +72,13 @@ public class RealmChangingPortal : MonoBehaviour {
 		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);
 	}
 
-	//collide with player and change to specofoed realm
+	//collide with player and change to specified realm
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag ("Player")) {
+
+			other.transform.SetParent (null);
+
 			//hide current realm objects
 			for (int i = 0; i < currentRealmObjects.Length; i++) {
 				GameObject curObject = currentRealmObjects [i];

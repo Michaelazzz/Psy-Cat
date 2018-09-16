@@ -2,13 +2,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level 2\RealmChangingPortal.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenuLayout.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\SceneTransition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\SetEventSystemButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Level 2\RealmChangingPortal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\LoadSceneByIndex.cs" Line="24" Column="29" />
+      <File FileName="Assets\Scripts\Level 2\RealmChangingPortal.cs" Line="75" Column="45" />
+      <File FileName="Assets\Scripts\Level 2\Level2Pickup.cs" Line="7" Column="19" />
+      <File FileName="Assets\Scripts\Tutorial\TutorialPickup.cs" Line="15" Column="37" />
+      <File FileName="Assets\Scripts\Level 1\PlayerOnMovingPlatform.cs" Line="18" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

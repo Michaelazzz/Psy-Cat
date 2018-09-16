@@ -5,11 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneByIndex : MonoBehaviour {
 
+	//game master
+	GameObject gameMaster;
+	//background music
+	GameObject backgroundMusic;
+
 	//public Animator musicAnim;
+
+	void Start()
+	{
+		backgroundMusic = GameObject.Find ("BackgroundMusic");
+		gameMaster = GameObject.Find ("GameMaster");
+	}
 
 	public void Load(string sceneName)
 	{
-		
+		Destroy (gameMaster);
+		Destroy (backgroundMusic);
+
 		SceneManager.LoadScene (sceneName);
 		//StartCoroutine (LoadScene (sceneName));
 	}
