@@ -80,7 +80,11 @@
      <Compile Include="Assets\Scripts\Level 1\MovingPlatform.cs" />
      <Compile Include="Assets\Scripts\Level 1\OpenEyeDoor.cs" />
      <Compile Include="Assets\Scripts\Level 1\PlayerOnMovingPlatform.cs" />
+     <Compile Include="Assets\Scripts\Level 2\FadeOutUIChangeRealms.cs" />
+     <Compile Include="Assets\Scripts\Level 2\FlashScreen.cs" />
      <Compile Include="Assets\Scripts\Level 2\Level2Pickup.cs" />
+     <Compile Include="Assets\Scripts\Level 2\Level2Player.cs" />
+     <Compile Include="Assets\Scripts\Level 2\Level2SceneTransition.cs" />
      <Compile Include="Assets\Scripts\Level 2\RealmChangingPortal.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerChangeRealms.cs" />
