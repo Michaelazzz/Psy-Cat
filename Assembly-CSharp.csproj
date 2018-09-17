@@ -103,6 +103,7 @@
      <Compile Include="Assets\Scripts\Tutorial\TutorialPlayer.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialPoints.cs" />
      <Compile Include="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\configureTutorialEyes.cs" />
      <Compile Include="Assets\Scripts\UI\LoadSceneByIndex.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuLayout.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuPlay.cs" />
@@ -115,7 +116,6 @@
      <Compile Include="Assets\Scripts\UI\UIChangePanels.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangeRealms.cs" />
      <Compile Include="Assets\Scripts\UI\VolumeController.cs" />
-     <Compile Include="Assets\configureTutorialEyes.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
      <None Include="Assets\Anima2D\Version.txt" />

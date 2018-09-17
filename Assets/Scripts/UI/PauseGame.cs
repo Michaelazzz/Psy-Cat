@@ -12,7 +12,7 @@ public class PauseGame : MonoBehaviour {
 	void Update () 
 	{
 		if (SceneManager.GetActiveScene ().buildIndex != 0) {
-			if (Input.GetKeyDown (KeyCode.Escape)) {
+			if (Input.GetButtonDown ("Escape")) {
 				if (GameIsPaused) {
 					Resume ();
 				} else {
