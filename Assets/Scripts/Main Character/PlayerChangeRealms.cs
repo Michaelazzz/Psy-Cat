@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerChangeRealms : MonoBehaviour {
 
 	public int startRealm = 1;
+	public bool disableControls;
 	public GameObject[] realm1Objects;
 	public GameObject[] realm2Objects;
 	public GameObject[] realm3Objects;
@@ -29,27 +30,31 @@ public class PlayerChangeRealms : MonoBehaviour {
 
 	void Update () 
 	{
-		//button pressed to change realm
-		if (Input.GetButtonDown ("ChangeRealmLeft")) {
-			if (startRealm == 0)
-				startRealm = 2;
-			else
-				startRealm--;
+		if (!disableControls) {
+			//button pressed to change realm
+			if (Input.GetButtonDown ("ChangeRealmLeft")) {
+				if (startRealm == 0)
+					startRealm = 2;
+				else
+					startRealm--;
 
-			ChangeRealms (startRealm);
-		}
+				ChangeRealms (startRealm);
+			}
 
-		if (Input.GetButtonDown ("ChangeRealmRight")) {
-			if (startRealm == 2)
-				startRealm = 0;
-			else
-				startRealm++;
+			if (Input.GetButtonDown ("ChangeRealmRight")) {
+				if (startRealm == 2)
+					startRealm = 0;
+				else
+					startRealm++;
 
+				ChangeRealms (startRealm);
+			}
+		} else {
 			ChangeRealms (startRealm);
 		}
 	}
 
-	void ChangeRealms(int realm)
+	public void ChangeRealms(int realm)
 	{
 		gm.currentRealm = realm;
 		transform.SetParent (null);

@@ -9,29 +9,34 @@ public class RealmChangingPortal : MonoBehaviour {
 
 	//the current realm
 	//get current realm from game master
-	int currentRealm;
+	//int currentRealm;
 
 	//name of realms
-	public string nextRealmName;
-	public string currentRealmName;
+	//public string nextRealmName;
+	//public string currentRealmName;
+
+	//change realms script
+	PlayerChangeRealms changeRealms;
 
 	//realm objects
 	//next realm objects
-	public GameObject[] nextRealmObjects;
+	//public GameObject[] nextRealmObjects;
 	//current realm objects
-	public GameObject[] currentRealmObjects;
+	//public GameObject[] currentRealmObjects;
 
 	//game master
-	private GameMaster gm;
+	//private GameMaster gm;
 
-	void Awake()
+	void Start()
 	{
-		gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
+		changeRealms = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerChangeRealms>();
+
+		//gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
 
 		//get current realm
-		currentRealm = gm.currentRealm;
+		//currentRealm = gm.currentRealm;
 
-		if (currentRealm == 0) {
+		/*if (currentRealm == 0) {
 			currentRealmName = "Realm1";
 		} else if (currentRealm == 1) {
 			currentRealmName = "Realm2";
@@ -52,15 +57,15 @@ public class RealmChangingPortal : MonoBehaviour {
 		nextRealmObjects = GameObject.FindGameObjectsWithTag (nextRealmName);
 
 		currentRealmObjects = new GameObject[GameObject.FindGameObjectsWithTag(currentRealmName).Length];
-		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);
+		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);*/
 	}
 
 	void Update()
 	{
-		currentRealm = gm.currentRealm;
+		//currentRealm = gm.currentRealm;
 
 		//get right tag for the current realm
-		if (currentRealm == 0) {
+		/*if (currentRealm == 0) {
 			currentRealmName = "Realm1";
 		} else if (currentRealm == 1) {
 			currentRealmName = "Realm2";
@@ -69,7 +74,7 @@ public class RealmChangingPortal : MonoBehaviour {
 		}
 
 		currentRealmObjects = new GameObject[GameObject.FindGameObjectsWithTag(currentRealmName).Length];
-		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);
+		currentRealmObjects = GameObject.FindGameObjectsWithTag (currentRealmName);*/
 	}
 
 	//collide with player and change to specified realm
@@ -80,7 +85,7 @@ public class RealmChangingPortal : MonoBehaviour {
 			other.transform.SetParent (null);
 
 			//hide current realm objects
-			for (int i = 0; i < currentRealmObjects.Length; i++) {
+			/*for (int i = 0; i < currentRealmObjects.Length; i++) {
 				GameObject curObject = currentRealmObjects [i];
 
 				curObject.SetActive (false);
@@ -91,9 +96,10 @@ public class RealmChangingPortal : MonoBehaviour {
 				GameObject curObject = nextRealmObjects [i];
 
 				curObject.SetActive (true);
-			}
+			}*/
 
-			gm.currentRealm = nextRealm;
+			//gm.currentRealm = nextRealm;
+			changeRealms.startRealm = nextRealm;
 		}
 	}
 
