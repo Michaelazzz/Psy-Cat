@@ -54,7 +54,6 @@ public class PlayerChangeRealms : MonoBehaviour {
 
 	public void ChangeRealms(int realm)
 	{
-		Debug.Log ("Change realms");
 
 		gm.currentRealm = realm;
 		transform.SetParent (null);

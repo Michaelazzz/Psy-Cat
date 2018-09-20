@@ -21,8 +21,6 @@ public class RealmChangingPortal : MonoBehaviour {
 	{
 		if (other.CompareTag ("Player")) {
 
-			//other.transform.SetParent (null);
-
 			//gm.currentRealm = nextRealm;
 			changeRealms.ChangeRealms(nextRealm);
 		}

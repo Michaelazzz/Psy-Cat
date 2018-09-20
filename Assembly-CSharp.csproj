@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\Level 2\Level2SceneTransition.cs" />
      <Compile Include="Assets\Scripts\Level 2\RealmChangingPortal.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Main Character\LandingSound.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerChangeRealms.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerPos.cs" />

@@ -298,13 +298,13 @@ public class PlayerController : MonoBehaviour
 
 	void OnDrawGizmos()
 	{
-		Gizmos.color = Color.yellow;
+		//Gizmos.color = Color.yellow;
 
 		//box detection
-		if(!facingRight)
-			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
-		else if(facingRight)
-			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
+		//if(!facingRight)
+		//	Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
+		//else if(facingRight)
+		//	Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
 
 		//enemy detection
 		//Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * enemyDetectionArea);
