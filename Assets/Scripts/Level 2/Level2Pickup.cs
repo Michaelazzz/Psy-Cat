@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Level2Pickup : MonoBehaviour {
 
-	public GameObject boundary; 
+	public GameObject[] boundaries; 
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag ("Player")) {
-			boundary.SetActive (true);
+			for(int i = 0; i < boundaries.Length; i++)
+				boundaries[i].SetActive (true);
 		}
 	}
 }

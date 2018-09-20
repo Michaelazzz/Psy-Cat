@@ -33,31 +33,33 @@ public class PlayerChangeRealms : MonoBehaviour {
 		if (!disableControls) {
 			//button pressed to change realm
 			if (Input.GetButtonDown ("ChangeRealmLeft")) {
-				if (startRealm == 0)
-					startRealm = 2;
-				else
+				if (startRealm == 0) {
+					ChangeRealms (2);
+				} else {
 					startRealm--;
-
-				ChangeRealms (startRealm);
+					ChangeRealms (startRealm);
+				}
 			}
 
 			if (Input.GetButtonDown ("ChangeRealmRight")) {
-				if (startRealm == 2)
-					startRealm = 0;
-				else
+				if (startRealm == 2) {
+					ChangeRealms (0);
+				} else {
 					startRealm++;
-
-				ChangeRealms (startRealm);
+					ChangeRealms (startRealm);
+				}
 			}
-		} else {
-			ChangeRealms (startRealm);
 		}
 	}
 
 	public void ChangeRealms(int realm)
 	{
+		Debug.Log ("Change realms");
+
 		gm.currentRealm = realm;
 		transform.SetParent (null);
+
+		startRealm = realm;
 
 		if (startRealm == 0) {
 			for (int i = 0; i < realm1Objects.Length; i++) {
