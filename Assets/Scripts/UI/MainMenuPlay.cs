@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.EventSystems;
 
 public class MainMenuPlay : MonoBehaviour {
 
@@ -24,6 +25,9 @@ public class MainMenuPlay : MonoBehaviour {
 	public int savedLevel;
 	private SaveAndLoad sal;
 
+	[Header("Event System")]
+	public EventSystem eventSystem;
+
 	void Start()
 	{
 		//get save and load component to use
@@ -44,6 +48,9 @@ public class MainMenuPlay : MonoBehaviour {
 
 	IEnumerator LoadScene(int index)
 	{
+		//disable event system
+		eventSystem.enabled = false;
+
 		video.Play ();
 		if(musicAnim != null)
 			musicAnim.SetTrigger ("mute");

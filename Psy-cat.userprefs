@@ -1,10 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level 3\MovingCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenuPlay.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level 3\MovingCamera.cs" Line="37" Column="5" />
-      <File FileName="Assets\Scripts\Level 1\MovingPlatform.cs" Line="35" Column="4" />
-      <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="47" Column="34" />
+      <File FileName="Assets\Scripts\Level 3\MovingCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Level 1\MovingPlatform.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\PauseGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\MainMenuPlay.cs" Line="29" Column="9" />
+      <File FileName="Assets\Scripts\UI\MainMenuLayout.cs" Line="4" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
