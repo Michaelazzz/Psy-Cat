@@ -107,6 +107,7 @@
      <Compile Include="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" />
      <Compile Include="Assets\Scripts\Tutorial\configureTutorialEyes.cs" />
      <Compile Include="Assets\Scripts\UI\LoadSceneByIndex.cs" />
+     <Compile Include="Assets\Scripts\UI\LogoSceneTransition.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuLayout.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuPlay.cs" />
      <Compile Include="Assets\Scripts\UI\MusicTransition.cs" />
