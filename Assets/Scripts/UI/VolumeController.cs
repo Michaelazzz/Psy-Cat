@@ -10,8 +10,6 @@ public class VolumeController : MonoBehaviour {
 	public Slider slider;
 	//object with the sound
 	[Header("Sound Object")]
-	public AudioSource soundObject; 
-	public bool background;
 	private AudioSource backgroundMusic;
 
 	[Header("Animator (Background Music)")]
@@ -22,11 +20,7 @@ public class VolumeController : MonoBehaviour {
 		backgroundMusic = GameObject.Find ("BackgroundMusic").GetComponent<AudioSource>();
 
 		//get volume from object
-		if (background) {
-			slider.value = backgroundMusic.volume;
-		} else {
-			slider.value = soundObject.volume;
-		}
+		slider.value = backgroundMusic.volume;
 
 		//disable animator if there is one
 		if (musicAnim != null)
@@ -36,10 +30,6 @@ public class VolumeController : MonoBehaviour {
 	void Update()
 	{
 		//update volume with slider value
-		if (background) {
-			backgroundMusic.volume = slider.value;
-		} else {
-			soundObject.volume = slider.value;
-		}
+		backgroundMusic.volume = slider.value;
 	}
 }

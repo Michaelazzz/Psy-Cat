@@ -116,6 +116,7 @@
      <Compile Include="Assets\Scripts\UI\Resume.cs" />
      <Compile Include="Assets\Scripts\UI\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\UI\SetEventSystemButton.cs" />
+     <Compile Include="Assets\Scripts\UI\SoundEffectsVolume.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangePanels.cs" />
      <Compile Include="Assets\Scripts\UI\UIChangeRealms.cs" />
      <Compile Include="Assets\Scripts\UI\VolumeController.cs" />

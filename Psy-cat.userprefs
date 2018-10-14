@@ -1,11 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\PlayerChangeRealms.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\SoundEffectsVolume.cs">
     <Files>
       <File FileName="Assets\Scripts\Level 1\MovingPlatform.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Tutorial\TutorialSceneTransition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Level 2\RealmChangingPortal.cs" Line="25" Column="21" />
+      <File FileName="Assets\Scripts\Level 2\RealmChangingPortal.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerChangeRealms.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main Character\LandingSound.cs" Line="36" Column="83" />
+      <File FileName="Assets\Scripts\UI\VolumeController.cs" Line="33" Column="3" />
+      <File FileName="Assets\Scripts\UI\SoundEffectsVolume.cs" Line="25" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
