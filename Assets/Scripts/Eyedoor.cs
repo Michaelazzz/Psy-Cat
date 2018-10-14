@@ -8,6 +8,7 @@ public class Eyedoor : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		eyeDoorAnim.SetTrigger ("close");
+		if (other.CompareTag ("Player")) 
+			eyeDoorAnim.SetTrigger ("close");
 	}
 }

@@ -10,6 +10,7 @@ public class OpenEyeDoor : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		eyeDoorAnim.SetTrigger ("open");
+		if (other.CompareTag ("Player"))
+			eyeDoorAnim.SetTrigger ("open");
 	}
 }

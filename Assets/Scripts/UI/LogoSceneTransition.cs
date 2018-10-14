@@ -18,8 +18,9 @@ public class LogoSceneTransition : MonoBehaviour {
 
 	IEnumerator LoadScene()
 	{
-		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
+		transitionAnim.SetTrigger ("dead");
+		yield return new WaitForSeconds (1.6f);
 		SceneManager.LoadScene (sceneName);
 	}
 }
