@@ -18,6 +18,7 @@ public class SaveLevel : MonoBehaviour {
 		validLevels [0] = 1;
 		validLevels [1] = 3;
 		validLevels [2] = 5;
+		validLevels [2] = 6;
 
 		//get scene index when the scene is loaded
 		//gm = GameObject.FindGameObjectWithTag ("GM").GetComponent<GameMaster> ();
