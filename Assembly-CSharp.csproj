@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Audio\BoxAudio.cs" />
      <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\CheckpointSound.cs" />
+     <Compile Include="Assets\Scripts\DoNotDestroy.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemySpin.cs" />
      <Compile Include="Assets\Scripts\Eyedoor.cs" />
