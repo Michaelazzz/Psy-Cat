@@ -11,7 +11,7 @@
       <File FileName="Assets\Scripts\GameMaster.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\DoNotDestroy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Audio\BoxAudio.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\SoundEffectsVolume.cs" Line="21" Column="11" />
+      <File FileName="Assets\Scripts\UI\SoundEffectsVolume.cs" Line="21" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
