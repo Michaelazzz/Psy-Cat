@@ -22,7 +22,7 @@ public class SaveAndLoad : MonoBehaviour {
 			return PlayerPrefs.GetInt ("LevelKey", 0);
 		} else {
 			//return 1 (the first level) if there has not been a save yet
-			return 1;
+			return 2;
 		}
 	}
 

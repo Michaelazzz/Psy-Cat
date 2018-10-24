@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class FadeOutUIChangeRealms : MonoBehaviour {
 
-	public Animator animator;
+	Animator animator;
+
+	void Start()
+	{
+		animator = GameObject.Find ("Realm Panel").GetComponent<Animator>();
+	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
