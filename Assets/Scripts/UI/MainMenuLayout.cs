@@ -11,7 +11,7 @@ public class MainMenuLayout : MonoBehaviour {
 	public GameObject newGameButton;
 	public GameObject playButton;
 
-	void Update()
+	void Awake()
 	{
 		if (PlayerPrefs.HasKey ("LevelKey")) {
 			newGamePanel.SetActive (false);
