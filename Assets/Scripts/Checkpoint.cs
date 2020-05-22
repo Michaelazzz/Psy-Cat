@@ -5,6 +5,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour {
 
 	private GameMaster gm;
+	private SaveAndLoad sal;
 
 	void Start()
 	{

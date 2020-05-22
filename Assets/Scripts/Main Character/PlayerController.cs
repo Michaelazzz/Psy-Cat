@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
 	//scene transition
 	[Header("Scene Transition")]
 	public Animator transitionAnim;
-	public string sceneName;
 
 	//sound effects
 	[Header("Sound Effects")]
@@ -111,7 +110,7 @@ public class PlayerController : MonoBehaviour
 	//physics in fixed update
 	void FixedUpdate()
 	{
-		//if player is dead diable controls
+		//if player is dead disable controls
 		if (!dead) {
 			//grounded
 			grounded = isGrounded ();
@@ -258,6 +257,8 @@ public class PlayerController : MonoBehaviour
 		if (enemyHitLeft.collider != null || enemyHitRight.collider != null || enemyHitDown.collider != null)
 		{
 			dead = true;
+			animator.SetInteger ("deadNumber", randomNum());
+
 			StartCoroutine (LoadScene());
 		}
 	}
@@ -290,15 +291,20 @@ public class PlayerController : MonoBehaviour
 		//SceneManager.LoadScene (sceneName);
 	}
 		
+	public int randomNum()
+	{
+		return Random.Range (0, 2);
+	}
+
 	void OnDrawGizmos()
 	{
-		Gizmos.color = Color.yellow;
+		//Gizmos.color = Color.yellow;
 
 		//box detection
-		if(!facingRight)
-			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
-		else if(facingRight)
-			Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
+		//if(!facingRight)
+		//	Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * raycastDistance);
+		//else if(facingRight)
+		//	Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.right * raycastDistance);
 
 		//enemy detection
 		//Gizmos.DrawLine (transform.position, (Vector2)transform.position + Vector2.left * enemyDetectionArea);

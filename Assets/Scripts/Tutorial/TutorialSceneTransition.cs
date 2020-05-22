@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TutorialSceneTransition : MonoBehaviour {
 
+	//game master
+	GameObject gameMaster;
+	//background music
+	GameObject backgroundMusic;
+
 	//scene transition
 	[Header("Scene Transistion")]
 	public Animator transitionAnim;
@@ -15,12 +20,24 @@ public class TutorialSceneTransition : MonoBehaviour {
 	[Header("Music Transition")]
 	public Animator musicAnim;
 
+	void Start()
+	{
+		backgroundMusic = GameObject.Find ("BackgroundMusic");
+		gameMaster = GameObject.Find ("GameMaster");
+	}
+
 	IEnumerator LoadScene()
 	{
-		if(musicAnim != null)
+		if (musicAnim != null) {
+			musicAnim.enabled = true;
 			musicAnim.SetTrigger ("mute");
+		}
 		transitionAnim.SetTrigger ("dead");
 		yield return new WaitForSeconds (time);
+
+		Destroy (gameMaster);
+		Destroy (backgroundMusic);
+
 		SceneManager.LoadScene (sceneName);
 	}
 

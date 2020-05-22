@@ -43,8 +43,6 @@ public class Enemy : MonoBehaviour {
 		//detect player on surface
 		DetectPlayer();
 
-
-
 		//player not detected yet
 		if (detected == false) {
 			//patrol state
@@ -62,6 +60,8 @@ public class Enemy : MonoBehaviour {
 					movingRight = true;
 				}
 			}
+
+			animator.SetBool ("detected", false);
 		} else //player detected
 		{
 			//follow player state

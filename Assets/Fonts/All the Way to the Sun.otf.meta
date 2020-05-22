@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f3e16bf926969d24480494b2c30d593a
+timeCreated: 1533478383
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: All the Way to the Sun
+  fontNames:
+  - All the Way to the Sun
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
